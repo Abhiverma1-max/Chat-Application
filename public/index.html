@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSocket Chat App</title>
+    <link rel="stylesheet" href="style.css" type="text/css" media="all">
+</head>
+
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h2>Real-Time Chat App</h2>
+        </div>
+        <div class="username-box" id="auth-section" style="display: none;">
+            <input type="text" id="username">
+            <button onclick="joinChat()">Join Chat</button>
+        </div>
+        <div id="main-chat-area" style="display: none;">
+            <div class="chat-messages" id="messages"></div>
+            <div id="typing-status"></div>
+            <div class="chat-input">
+                <input type="text" id="message" placeholder="Type a message..." oninput="typingHandler()">
+                <button onclick="sendMessage()">Send</button>
+
+            </div>
+            <div class="chat-logout">
+                <button onclick="window.location.href='/logout'">
+                    Logout
+                </button>
+            </div>
+        </div>
+        <div id="loading-status" style="text-align: center; padding: 20px;">
+            Verifying session...
+        </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
