@@ -20,6 +20,7 @@ npm install
 ### Start server
 npm run dev
 ### Open browser
-http://localhost:3000
+🚀 Live Demo:
+https://chat-application-7h59.onrender.com
 ## Run Tests
 npm test
