@@ -180,6 +180,8 @@
 //         console.log(`Server running on port ${PORT}`);
 //     });
 
+const dns = require('dns');
+dns.setServers(['8.8.8.8', '8.8.4.4']);
 
 require('dotenv').config();
 
@@ -196,6 +198,7 @@ const limiter = require('./middleware/rateLimiter');
 const socketHandler = require('./socket/socketHandler');
 
 const app = express();
+app.set('trust proxy', 1);
 const server = http.createServer(app);
 
 app.use(session({
